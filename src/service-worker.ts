@@ -58,11 +58,11 @@ registerRoute(
 // precache, in this case same-origin .png requests like those from in public/
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
-  ({ request, url }) => url.origin === self.location.origin && (
-    url.pathname.endsWith('.ts') || 
+  ({ request, url }) => url.origin === self.location.origin && ( 
     url.pathname.endsWith('.css') || 
     url.pathname.endsWith('.html') || 
-    url.pathname.endsWith('.js')),
+    url.pathname.endsWith('.js')
+  ),
   // Customize this strategy as needed, e.g., by changing to CacheFirst.
   new StaleWhileRevalidate({
     cacheName: 'site',
