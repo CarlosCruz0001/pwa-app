@@ -58,7 +58,7 @@ registerRoute(
 // precache, in this case same-origin .png requests like those from in public/
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
-  ({ url }) => url.origin === self.location.origin && (
+  ({ request, url }) => url.origin === self.location.origin && (
     url.pathname.endsWith('.ts') || 
     url.pathname.endsWith('.css') || 
     url.pathname.endsWith('.html') || 
